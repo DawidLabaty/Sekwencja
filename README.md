@@ -1,0 +1,2 @@
+# Sekwencja
+Projekt z JPWP
