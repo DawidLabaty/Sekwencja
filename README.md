@@ -1,2 +1,2 @@
 # Sekwencja
-Projekt z JPWP
+Interaktywna gra typu 'serious game'
