@@ -136,6 +136,7 @@ namespace Sekwencja
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.Color.Gray;
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label36.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label36.Location = new System.Drawing.Point(617, 607);
             this.label36.Margin = new System.Windows.Forms.Padding(0);
             this.label36.Name = "label36";
@@ -148,6 +149,7 @@ namespace Sekwencja
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.Gray;
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label35.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label35.Location = new System.Drawing.Point(494, 607);
             this.label35.Margin = new System.Windows.Forms.Padding(0);
             this.label35.Name = "label35";
@@ -160,6 +162,7 @@ namespace Sekwencja
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.Gray;
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label34.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label34.Location = new System.Drawing.Point(371, 607);
             this.label34.Margin = new System.Windows.Forms.Padding(0);
             this.label34.Name = "label34";
@@ -172,6 +175,7 @@ namespace Sekwencja
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.Gray;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label33.Location = new System.Drawing.Point(248, 607);
             this.label33.Margin = new System.Windows.Forms.Padding(0);
             this.label33.Name = "label33";
@@ -184,6 +188,7 @@ namespace Sekwencja
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Gray;
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label32.Location = new System.Drawing.Point(125, 607);
             this.label32.Margin = new System.Windows.Forms.Padding(0);
             this.label32.Name = "label32";
@@ -196,6 +201,7 @@ namespace Sekwencja
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.Gray;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label31.Location = new System.Drawing.Point(2, 607);
             this.label31.Margin = new System.Windows.Forms.Padding(0);
             this.label31.Name = "label31";
@@ -208,6 +214,7 @@ namespace Sekwencja
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.Gray;
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label30.Location = new System.Drawing.Point(617, 486);
             this.label30.Margin = new System.Windows.Forms.Padding(0);
             this.label30.Name = "label30";
@@ -220,6 +227,7 @@ namespace Sekwencja
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Gray;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label29.Location = new System.Drawing.Point(494, 486);
             this.label29.Margin = new System.Windows.Forms.Padding(0);
             this.label29.Name = "label29";
@@ -232,6 +240,7 @@ namespace Sekwencja
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Gray;
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label28.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label28.Location = new System.Drawing.Point(371, 486);
             this.label28.Margin = new System.Windows.Forms.Padding(0);
             this.label28.Name = "label28";
@@ -244,6 +253,7 @@ namespace Sekwencja
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Gray;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label27.Location = new System.Drawing.Point(248, 486);
             this.label27.Margin = new System.Windows.Forms.Padding(0);
             this.label27.Name = "label27";
@@ -256,6 +266,7 @@ namespace Sekwencja
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Gray;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label26.Location = new System.Drawing.Point(125, 486);
             this.label26.Margin = new System.Windows.Forms.Padding(0);
             this.label26.Name = "label26";
@@ -268,6 +279,7 @@ namespace Sekwencja
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Gray;
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label25.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label25.Location = new System.Drawing.Point(2, 486);
             this.label25.Margin = new System.Windows.Forms.Padding(0);
             this.label25.Name = "label25";
@@ -280,6 +292,7 @@ namespace Sekwencja
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Gray;
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label24.Location = new System.Drawing.Point(617, 365);
             this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
@@ -292,6 +305,7 @@ namespace Sekwencja
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Gray;
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label23.Location = new System.Drawing.Point(494, 365);
             this.label23.Margin = new System.Windows.Forms.Padding(0);
             this.label23.Name = "label23";
@@ -304,6 +318,7 @@ namespace Sekwencja
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Gray;
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label22.Location = new System.Drawing.Point(371, 365);
             this.label22.Margin = new System.Windows.Forms.Padding(0);
             this.label22.Name = "label22";
@@ -316,6 +331,7 @@ namespace Sekwencja
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Gray;
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label21.Location = new System.Drawing.Point(248, 365);
             this.label21.Margin = new System.Windows.Forms.Padding(0);
             this.label21.Name = "label21";
@@ -328,6 +344,7 @@ namespace Sekwencja
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Gray;
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label20.Location = new System.Drawing.Point(125, 365);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
@@ -340,6 +357,7 @@ namespace Sekwencja
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Gray;
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label19.Location = new System.Drawing.Point(2, 365);
             this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
@@ -352,6 +370,7 @@ namespace Sekwencja
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Gray;
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label18.Location = new System.Drawing.Point(617, 244);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
@@ -364,6 +383,7 @@ namespace Sekwencja
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Gray;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label17.Location = new System.Drawing.Point(494, 244);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
@@ -376,6 +396,7 @@ namespace Sekwencja
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Gray;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.Location = new System.Drawing.Point(371, 244);
             this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
@@ -388,6 +409,7 @@ namespace Sekwencja
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Gray;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label15.Location = new System.Drawing.Point(248, 244);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
@@ -400,6 +422,7 @@ namespace Sekwencja
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Gray;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label14.Location = new System.Drawing.Point(125, 244);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
@@ -412,6 +435,7 @@ namespace Sekwencja
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Gray;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.Location = new System.Drawing.Point(2, 244);
             this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
@@ -424,6 +448,7 @@ namespace Sekwencja
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Gray;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(617, 123);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
@@ -436,6 +461,7 @@ namespace Sekwencja
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Gray;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.Location = new System.Drawing.Point(494, 123);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
@@ -448,6 +474,7 @@ namespace Sekwencja
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Gray;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.Location = new System.Drawing.Point(371, 123);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
@@ -460,6 +487,7 @@ namespace Sekwencja
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Gray;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(248, 123);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
@@ -472,6 +500,7 @@ namespace Sekwencja
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Gray;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.Location = new System.Drawing.Point(125, 123);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
@@ -484,6 +513,7 @@ namespace Sekwencja
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Gray;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(2, 123);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
@@ -496,6 +526,7 @@ namespace Sekwencja
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Gray;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(617, 2);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
@@ -508,6 +539,7 @@ namespace Sekwencja
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Gray;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(494, 2);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
@@ -520,6 +552,7 @@ namespace Sekwencja
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Gray;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(371, 2);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
@@ -532,6 +565,7 @@ namespace Sekwencja
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Gray;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(248, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
@@ -544,6 +578,7 @@ namespace Sekwencja
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Gray;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(125, 2);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
@@ -556,6 +591,7 @@ namespace Sekwencja
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Gray;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
@@ -577,6 +613,7 @@ namespace Sekwencja
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Sekwencja";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
