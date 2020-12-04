@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Pola label1-label36 w klasie Form1 zostały ukryte dla poprawy czytelności">
+    <Position X="3.474" Y="3.162" Height="0.62" Width="1.949" />
+  </Comment>
+  <Class Name="Sekwencja.Program">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sekwencja.game_info">
+    <Position X="8.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABgCAAQIAAAAAAEIBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_info.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sekwencja.Form1">
+    <Position X="5.5" Y="2" Width="1.75" />
+    <Members>
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label18" Hidden="true" />
+      <Field Name="label19" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label20" Hidden="true" />
+      <Field Name="label21" Hidden="true" />
+      <Field Name="label22" Hidden="true" />
+      <Field Name="label23" Hidden="true" />
+      <Field Name="label24" Hidden="true" />
+      <Field Name="label25" Hidden="true" />
+      <Field Name="label26" Hidden="true" />
+      <Field Name="label27" Hidden="true" />
+      <Field Name="label28" Hidden="true" />
+      <Field Name="label29" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label30" Hidden="true" />
+      <Field Name="label31" Hidden="true" />
+      <Field Name="label32" Hidden="true" />
+      <Field Name="label33" Hidden="true" />
+      <Field Name="label34" Hidden="true" />
+      <Field Name="label35" Hidden="true" />
+      <Field Name="label36" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>/wQECAQBACYCABAAAACAAACKCAACIBAJAABABAAEADA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="game" />
+      <Field Name="input" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sekwencja.user_input">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAAAgAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>user_input.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.Form.ControlCollection" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

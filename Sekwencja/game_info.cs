@@ -21,5 +21,6 @@ namespace Sekwencja
         public int max_moves = 5; //maksymalna liczba ruchów w poziomie
         public int score = 0;
         public Stopwatch level_time = new Stopwatch();
+        public bool level_stopwatch_started = false;
     }
 }

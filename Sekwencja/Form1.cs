@@ -25,26 +25,18 @@ namespace Sekwencja
             show_seq(game);
         }
 
-        public void wait(int ms)
-        {
-            Stopwatch wait = new Stopwatch();
-            wait.Start();
-            while (wait.ElapsedMilliseconds <= ms)
-            {
-
-            }
-            wait.Stop();
-            wait.Reset();
-        }
-
         public void show_seq(game_info game)
         {
-            //start to zawsze prawy dolny róg, czyli labels[35]
             int current_pos;
-            current_pos = 35;
+            current_pos = 35;   //start to zawsze prawy dolny róg, czyli labels[35]
             game.labels[35].BackColor = Color.Green;
+            //czas na zapamiętanie sekwencji zależny od ilości ruchów
             timer2.Interval = 500 * game.number_of_moves;
-            game.level_time.Start();
+            if (game.level_stopwatch_started == false)  //sprawdzenie, czy rozpoczęto już pomiar czasu
+            {
+                game.level_time.Start();    //rozpoczęcie pomiaru czasu poziomu
+                game.level_stopwatch_started = true;
+            }
             for (int i = 0; i < game.number_of_moves; i++)
             {
                     switch (game.seq[i])
@@ -76,6 +68,7 @@ namespace Sekwencja
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            //timer odmierza kilka sekund i następuje wymazanie sekwencji z ekranu
             clear_screen(game);
             timer2.Stop();
         }
@@ -95,27 +88,31 @@ namespace Sekwencja
         {
             bool flag;
             flag = true;
+            //sprawdzenie, czy gracz popełnił błąd
             for (int i=0; i<game.number_of_moves;i++)
                 {
-                    if (input.input[i] != game.seq[i])
+                    if (input.keyboard_input[i] != game.seq[i])
                     {
                         flag = false;
                     }
                 }
+            //jeśli gracz poprawnie wykonał wszystkie ruchy
             if (flag == true)
             {
                 if (game.number_of_moves == game.max_moves)
                 {
-                    //wyświetlenie na ekranie punktacji
+                    //zaktualizowanie wyświetlanej na ekranie punktacji
                     game.score += game.number_of_moves + 25;
                     points_label.Text = "PUNKTY: " + game.score.ToString();
-                    //pomiar czasu poziomu i wyświetlenie go na ekranie
+                    //wyświetlenie czasu przejścia poziomu na ekranie
                     game.level_time.Stop();
                     TimeSpan ts = new TimeSpan();
                     ts = game.level_time.Elapsed;
                     string elapsedTime = String.Format("{0:00}.{1:00}",ts.Seconds, ts.Milliseconds/10);
+                    level_time_label.Text = "CZAS: " + elapsedTime;
+                    //reset stopera
                     game.level_time.Reset();
-                    level_time_label.Text = "CZAS: "+elapsedTime;
+                    game.level_stopwatch_started = false;
                     //przygotowanie do kolejnego poziomu
                     game.number_of_moves = 3;
                     game.level += 1;
@@ -155,46 +152,50 @@ namespace Sekwencja
                 switch (keyData)
                 {
                     case Keys.Down:
+                        //sprawdzenie czy ruch jest nieprawidłowy
                         if (input.current_pos >= 30)
                             invalid = true;
                         else
                         {
-                            input.input[input.count_input] = "down";
+                            input.keyboard_input[input.count_input] = "down";
                             game.labels[input.current_pos].Text = "\u2193";
                             input.current_pos += 6;
                             game.labels[input.current_pos].BackColor = Color.Green;
                         }
                         break;
                     case Keys.Up:
+                        //sprawdzenie czy ruch jest nieprawidłowy
                         if (input.current_pos <= 5)
                             invalid = true;
                         else
                         {
-                            input.input[input.count_input] = "up";
+                            input.keyboard_input[input.count_input] = "up";
                             game.labels[input.current_pos].Text = "\u2191";
                             input.current_pos -= 6;
                             game.labels[input.current_pos].BackColor = Color.Green;
                         }
                         break;
                     case Keys.Right:
+                        //sprawdzenie czy ruch jest nieprawidłowy
                         if (input.current_pos == 5 || input.current_pos == 11 || input.current_pos == 17 ||
                             input.current_pos == 23 || input.current_pos == 29 || input.current_pos == 35)
                             invalid = true;
                         else
                         {
-                            input.input[input.count_input] = "right";
+                            input.keyboard_input[input.count_input] = "right";
                             game.labels[input.current_pos].Text = "\u2192";
                             input.current_pos += 1;
                             game.labels[input.current_pos].BackColor = Color.Green;
                         }
                         break;
                     case Keys.Left:
+                        //sprawdzenie czy ruch jest nieprawidłowy
                         if (input.current_pos == 0 || input.current_pos == 6 || input.current_pos == 12 ||
                             input.current_pos == 18 || input.current_pos == 24 || input.current_pos == 31)
                             invalid = true;
                         else
                         {
-                            input.input[input.count_input] = "left";
+                            input.keyboard_input[input.count_input] = "left";
                             game.labels[input.current_pos].Text = "\u2190";
                             input.current_pos -= 1;
                             game.labels[input.current_pos].BackColor = Color.Green;

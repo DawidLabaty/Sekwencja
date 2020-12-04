@@ -15,7 +15,7 @@ namespace Sekwencja
 {
     public class user_input
     {
-        public string[] input = new string[10];
+        public string[] keyboard_input = new string[10];
         public int count_input = 0;
         public int current_pos = 35;
         public bool enabled = false;
