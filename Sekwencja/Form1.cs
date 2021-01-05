@@ -22,9 +22,17 @@ namespace Sekwencja
             game.labels = new Label[36] {label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12,
                 label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24,
                 label25, label26, label27, label28, label29, label30, label31, label32, label33, label34, label35, label36};
+            start_game(game);
+        }
+        
+        //rozpoczęcie gry
+        public void start_game(game_info game)
+        {
+            game.generate_seq();
             show_seq(game);
         }
 
+        //pokazanie sekwencji na ekranie
         public void show_seq(game_info game)
         {
             int current_pos;
@@ -66,13 +74,14 @@ namespace Sekwencja
             timer2.Start();
         }
 
+        //timer odmierzający kilka sekund i wymazujący sekwencję z ekranu
         private void timer2_Tick(object sender, EventArgs e)
         {
-            //timer odmierza kilka sekund i następuje wymazanie sekwencji z ekranu
             clear_screen(game);
             timer2.Stop();
         }
 
+        //funkcja wymazująca sekwencję z planszy
         public void clear_screen(game_info game)
         {
             for (int i = 0; i < 36; i++)
@@ -84,6 +93,7 @@ namespace Sekwencja
             input.enabled = true;
         }
 
+        //funkcja sprawdzająca ruchy gracza
         public void check_input(game_info game)
         {
             bool flag;
@@ -99,6 +109,7 @@ namespace Sekwencja
             //jeśli gracz poprawnie wykonał wszystkie ruchy
             if (flag == true)
             {
+                //sprawdzenie czy skończony został cały poziom
                 if (game.number_of_moves == game.max_moves)
                 {
                     //zaktualizowanie wyświetlanej na ekranie punktacji
@@ -108,9 +119,9 @@ namespace Sekwencja
                     game.level_time.Stop();
                     TimeSpan ts = new TimeSpan();
                     ts = game.level_time.Elapsed;
-                    string elapsedTime = String.Format("{0:00}.{1:00}",ts.Seconds, ts.Milliseconds/10);
+                    string elapsedTime = String.Format("{0:00}.{1:00}", ts.Seconds, ts.Milliseconds / 10);
                     level_time_label.Text = "CZAS: " + elapsedTime;
-                    //reset stopera
+                    //reset stopera odmierzającego czas poziomu
                     game.level_time.Reset();
                     game.level_stopwatch_started = false;
                     //przygotowanie do kolejnego poziomu
@@ -120,6 +131,7 @@ namespace Sekwencja
                     input.count_input = 0;
                     input.current_pos = 35;
                 }
+                //jeśli nie ukończono jeszcze poziomu
                 else
                 {
                     //wyświetlenie na ekranie punktacji
@@ -133,8 +145,11 @@ namespace Sekwencja
                     show_seq(game);
                 }
             }
+            //jeśli sekwencja jest nieprawidłowa
             else
+            {
                 MessageBox.Show("Nieprawidłowa sekwencja");
+            }
 
         }
 
@@ -143,6 +158,7 @@ namespace Sekwencja
         {
 
         }
+        //nadpisanie ProcessCmdKey aby możliwe było odczytywanie klawiszy strzałek
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             bool invalid = false;
@@ -216,16 +232,33 @@ namespace Sekwencja
                 return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public void restart_game()
+        //restart gry po kliknięciu na "restart"
+        private void restart_game()
         {
+            //reset informacji o grze (czas poziomu, poziom, liczba ruchów itp.)
+            game.reset_game_info();
+            //zatrzymanie zegara odpowiedzialnego za czyszczenie ekranu po chwili czasu
+            timer2.Stop();
+            //zresetowanie wszystkich ruchów gracza
+            input.reset_input();
+            //wyczyszczenie ekranu
+            clear_screen(game);
+            //
+            level_time_label.Text = "CZAS: X";
+            level_label.Text = "POZIOM: 1";
+            points_label.Text = "PUNKTY: 0";
+            //ponowne rozpoczęcie gry
+            start_game(game);
 
         }
 
-        public void end_game()
+        //wyjście z gry po kliknięciu na "koniec"
+        private void end_game()
         {
-
+            Application.Exit();
         }
 
+        //kliknięcie na napis menu
         private void menu_label_Click(object sender, EventArgs e)
         {
             koniec_label.Visible = true;
@@ -234,8 +267,10 @@ namespace Sekwencja
             restart_label.Enabled = true;
         }
 
+        //kliknięcie na napis restart
         private void restart_label_Click(object sender, EventArgs e)
         {
+            //uruchomienie procedury restartu gry
             restart_game();
             koniec_label.Visible = false;
             koniec_label.Enabled = false;
@@ -243,8 +278,10 @@ namespace Sekwencja
             restart_label.Enabled = false;
         }
 
+        //kliknięcie na napis koniec
         private void koniec_label_Click(object sender, EventArgs e)
         {
+            //uruchomienie procedury zakończenia gry
             end_game();
             koniec_label.Visible = false;
             koniec_label.Enabled = false;

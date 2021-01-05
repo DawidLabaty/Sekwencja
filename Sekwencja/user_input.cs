@@ -19,5 +19,15 @@ namespace Sekwencja
         public int count_input = 0;
         public int current_pos = 35;
         public bool enabled = false;
+
+        //reset wprowadzonych przez użytkownika ruchów itp.
+        public void reset_input()
+        {
+            for (int i = 0; i < 10; i++)
+                this.keyboard_input[i] = "";
+            this.count_input = 0;
+            this.current_pos = 35;
+            this.enabled = false;
+        }
     }
 }
