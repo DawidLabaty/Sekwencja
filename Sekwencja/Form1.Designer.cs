@@ -74,6 +74,8 @@ namespace Sekwencja
             this.koniec_label = new System.Windows.Forms.Label();
             this.restart_label = new System.Windows.Forms.Label();
             this.menu_label = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -691,6 +693,14 @@ namespace Sekwencja
             this.menu_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.menu_label.Click += new System.EventHandler(this.menu_label_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -761,6 +771,8 @@ namespace Sekwencja
         private System.Windows.Forms.Label menu_label;
         private System.Windows.Forms.Label restart_label;
         private System.Windows.Forms.Label koniec_label;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 

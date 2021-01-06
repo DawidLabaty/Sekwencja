@@ -141,8 +141,12 @@ namespace Sekwencja
                     game.number_of_moves += 1;
                     input.count_input = 0;
                     input.current_pos = 35;
-                    clear_screen(game);
-                    show_seq(game);
+                    //timer do wyczyszczenia ekranu
+                    timer3.Interval = 500;
+                    timer3.Start();
+                    //timer do pokazania sekwencji
+                    timer1.Interval = 1000;
+                    timer1.Start();
                 }
             }
             //jeśli sekwencja jest nieprawidłowa
@@ -243,7 +247,7 @@ namespace Sekwencja
             input.reset_input();
             //wyczyszczenie ekranu
             clear_screen(game);
-            //
+            //przywrócenie domyślnych wyświetlanych wartości (czas, poziom, punkty)
             level_time_label.Text = "CZAS: X";
             level_label.Text = "POZIOM: 1";
             points_label.Text = "PUNKTY: 0";
@@ -287,6 +291,18 @@ namespace Sekwencja
             koniec_label.Enabled = false;
             restart_label.Visible = false;
             restart_label.Enabled = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            show_seq(game);
+            timer1.Stop();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            clear_screen(game);
+            timer3.Stop();
         }
     }
 }
