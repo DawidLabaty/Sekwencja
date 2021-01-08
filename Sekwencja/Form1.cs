@@ -26,14 +26,14 @@ namespace Sekwencja
         }
         
         //rozpoczęcie gry
-        public void start_game(game_info game)
+        private void start_game(game_info game)
         {
             game.generate_seq();
             show_seq(game);
         }
 
         //pokazanie sekwencji na ekranie
-        public void show_seq(game_info game)
+        private void show_seq(game_info game)
         {
             input.enabled = false;
             int current_pos;
@@ -83,7 +83,7 @@ namespace Sekwencja
         }
 
         //funkcja wymazująca sekwencję z planszy
-        public void clear_screen(game_info game)
+        private void clear_screen(game_info game)
         {
             for (int i = 0; i < 36; i++)
             {
@@ -95,7 +95,7 @@ namespace Sekwencja
         }
 
         //funkcja sprawdzająca ruchy gracza
-        public void check_input(game_info game)
+        private void check_input(game_info game)
         {
             bool flag;
             flag = true;
@@ -126,13 +126,13 @@ namespace Sekwencja
                     game.level_time.Reset();
                     game.level_stopwatch_started = false;
                     //przygotowanie do kolejnego poziomu
-                    game.number_of_moves = 3;
-                    game.level += 1;
-                    game.max_moves += 4;
-                    input.count_input = 0;
-                    input.current_pos = 35;
-                    if(game.level == 2 || game.level == 3)
+                    if(game.level == 1 || game.level == 2)
                     {
+                        game.number_of_moves = 3;
+                        game.level += 1;
+                        game.max_moves += 4;
+                        input.count_input = 0;
+                        input.current_pos = 35;
                         level_label.Text = "POZIOM: " + game.level;
                         //timer3 i wewnątrz niego clear_screen()
                         timer3.Interval = 500;
@@ -141,7 +141,7 @@ namespace Sekwencja
                         timer4.Interval = 1500;
                         timer4.Start();
                     }
-                    else if(game.level > 3)
+                    else if(game.level == 3)
                     {
                         MessageBox.Show("Gratulacje, zaliczono wszystkie poziomy");
                     }
@@ -226,7 +226,7 @@ namespace Sekwencja
                     case Keys.Left:
                         //sprawdzenie czy ruch jest nieprawidłowy
                         if (input.current_pos == 0 || input.current_pos == 6 || input.current_pos == 12 ||
-                            input.current_pos == 18 || input.current_pos == 24 || input.current_pos == 31)
+                            input.current_pos == 18 || input.current_pos == 24 || input.current_pos == 30)
                             invalid = true;
                         else
                         {
