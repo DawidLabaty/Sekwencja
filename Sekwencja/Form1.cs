@@ -35,6 +35,7 @@ namespace Sekwencja
         //pokazanie sekwencji na ekranie
         public void show_seq(game_info game)
         {
+            input.enabled = false;
             int current_pos;
             current_pos = 35;   //start to zawsze prawy dolny róg, czyli labels[35]
             game.labels[35].BackColor = Color.Green;
@@ -127,9 +128,23 @@ namespace Sekwencja
                     //przygotowanie do kolejnego poziomu
                     game.number_of_moves = 3;
                     game.level += 1;
-                    game.max_moves += 5;
+                    game.max_moves += 4;
                     input.count_input = 0;
                     input.current_pos = 35;
+                    if(game.level == 2 || game.level == 3)
+                    {
+                        level_label.Text = "POZIOM: " + game.level;
+                        //timer3 i wewnątrz niego clear_screen()
+                        timer3.Interval = 500;
+                        timer3.Start();
+                        //timer4 i wewnątrz niego start_game()
+                        timer4.Interval = 1500;
+                        timer4.Start();
+                    }
+                    else if(game.level > 3)
+                    {
+                        MessageBox.Show("Gratulacje, zaliczono wszystkie poziomy");
+                    }
                 }
                 //jeśli nie ukończono jeszcze poziomu
                 else
@@ -152,7 +167,7 @@ namespace Sekwencja
             //jeśli sekwencja jest nieprawidłowa
             else
             {
-                MessageBox.Show("Nieprawidłowa sekwencja");
+                MessageBox.Show("Nieprawidłowa sekwencja, możesz zrestartować lub zakończyć grę używając menu");
             }
 
         }
@@ -241,8 +256,10 @@ namespace Sekwencja
         {
             //reset informacji o grze (czas poziomu, poziom, liczba ruchów itp.)
             game.reset_game_info();
-            //zatrzymanie zegara odpowiedzialnego za czyszczenie ekranu po chwili czasu
+            //zatrzymanie timerów
+            timer1.Stop();
             timer2.Stop();
+            timer3.Stop();
             //zresetowanie wszystkich ruchów gracza
             input.reset_input();
             //wyczyszczenie ekranu
@@ -295,14 +312,20 @@ namespace Sekwencja
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            show_seq(game);
             timer1.Stop();
+            show_seq(game);
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            clear_screen(game);
             timer3.Stop();
+            clear_screen(game);
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            timer4.Stop();
+            start_game(game);
         }
     }
 }

@@ -76,6 +76,8 @@ namespace Sekwencja
             this.menu_label = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -619,9 +621,9 @@ namespace Sekwencja
             this.points_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.points_label.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.points_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.points_label.Location = new System.Drawing.Point(799, 135);
+            this.points_label.Location = new System.Drawing.Point(770, 135);
             this.points_label.Name = "points_label";
-            this.points_label.Size = new System.Drawing.Size(160, 40);
+            this.points_label.Size = new System.Drawing.Size(214, 40);
             this.points_label.TabIndex = 1;
             this.points_label.Text = "PUNKTY: 0";
             this.points_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -632,9 +634,9 @@ namespace Sekwencja
             this.level_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.level_label.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.level_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.level_label.Location = new System.Drawing.Point(799, 30);
+            this.level_label.Location = new System.Drawing.Point(770, 30);
             this.level_label.Name = "level_label";
-            this.level_label.Size = new System.Drawing.Size(160, 40);
+            this.level_label.Size = new System.Drawing.Size(214, 40);
             this.level_label.TabIndex = 2;
             this.level_label.Text = "POZIOM: 1";
             this.level_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -645,9 +647,9 @@ namespace Sekwencja
             this.level_time_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.level_time_label.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.level_time_label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.level_time_label.Location = new System.Drawing.Point(799, 83);
+            this.level_time_label.Location = new System.Drawing.Point(770, 83);
             this.level_time_label.Name = "level_time_label";
-            this.level_time_label.Size = new System.Drawing.Size(160, 40);
+            this.level_time_label.Size = new System.Drawing.Size(214, 40);
             this.level_time_label.TabIndex = 3;
             this.level_time_label.Text = "CZAS: X";
             this.level_time_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -700,6 +702,10 @@ namespace Sekwencja
             // timer3
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Form1
             // 
@@ -773,6 +779,8 @@ namespace Sekwencja
         private System.Windows.Forms.Label koniec_label;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer timer5;
     }
 }
 

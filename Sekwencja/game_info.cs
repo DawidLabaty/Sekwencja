@@ -38,7 +38,7 @@ namespace Sekwencja
         //generowanie sekwencji
         public void generate_seq()
         {
-            this.seq = new string[10] { "up", "left", "up", "right", "up", "left", "left", "up", "left", "left" };
+            this.seq = new string[12] { "up", "left", "up", "left", "down", "left", "left", "up", "up", "right", "up", "left"};
         }
     }
 }
