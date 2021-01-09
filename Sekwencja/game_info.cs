@@ -1,30 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using System.Threading;
-using System.Runtime;
 
 namespace Sekwencja
 {
+    /// <summary>
+    /// Klasa zawierająca informacje o grze i jej obecnym stanie.
+    /// </summary>
     public class game_info
     {
+        /// <summary>
+        /// Tablica przechowująca kolejne ruchy w formie tekstowej.
+        /// </summary>
         public string[] seq = new string[13];
+        /// <summary>
+        /// Startowa liczba ruchów.
+        /// </summary>
         public int number_of_moves = 3; //startowa liczba ruchów
+        /// <summary>
+        /// Tablica przechowująca 36 labeli na których wyświetlana jest sekwencja.
+        /// </summary>
         public Label[] labels = new Label[36];
+        /// <summary>
+        /// Informacja o obecnym poziomie.
+        /// </summary>
         public int level = 1;
-        public int max_moves = 5; //maksymalna liczba ruchów w poziomie
+        /// <summary>
+        /// Maksymalna liczba ruchów w danym poziomie
+        /// </summary>
+        public int max_moves = 5; //maksymalna liczba ruchów w danym poziomie
+        /// <summary>
+        /// Zmienna zawierająca punktację.
+        /// </summary>
         public int score = 0;
+        /// <summary>
+        /// Stoper do pomiaru czasu trwania poziomu.
+        /// </summary>
         public Stopwatch level_time = new Stopwatch();
+        /// <summary>
+        /// Zmienna przechowująca informację o tym, czy rozpoczęto już pomiar czasu poziomu.
+        /// </summary>
         public bool level_stopwatch_started = false;
 
         //reset informacji o grze
+        /// <summary>
+        /// Metoda resetująca informację o grze do stanu początkowego.
+        /// </summary>
         public void reset_game_info()
         {
         this.number_of_moves = 3;
@@ -36,7 +57,9 @@ namespace Sekwencja
         this.level_stopwatch_started = false;
         }
 
-        //generowanie sekwencji
+        /// <summary>
+        /// Metoda generująca sekwencję w sposób pseudolosowy.
+        /// </summary>
         public void generate_seq()
         {
             int current_pos = 35;
@@ -53,7 +76,7 @@ namespace Sekwencja
             //wykonuj dopóki tablica z ruchami nie jest pełna i generator się nie zablokował
             while (check_if_full(table)==0 && check_if_stuck(count_iterations) == false)
             {
-                random = (Guid.NewGuid().GetHashCode())%4 + 1; //1 - lewo, 2 - prawo, 3 - góra, 4 - dół
+                random = rnd.Next(1,4); //1 - lewo, 2 - prawo, 3 - góra, 4 - dół
                 count_iterations += 1;
                 switch(random)
                 {
@@ -117,7 +140,12 @@ namespace Sekwencja
             }
         }
 
-        //sprawdzenie, czy kolejny ruch nie przechodzi przez użyte już pola
+        /// <summary>
+        /// Metoda sprawdzająca czy kolejny wygenerowany ruch nie przechodzi przez użyte już pola.
+        /// </summary>
+        /// <param name="table"></param> Tablica zawierająca numery wszystkich wykorzystanych pól.
+        /// <param name="next_pos"></param> Zmienna przechowująca numer kolejnego pola.
+        /// <returns></returns>
         private int check_previous_seq(int[] table, int next_pos)
         {
             bool invalid = false;
@@ -132,7 +160,11 @@ namespace Sekwencja
                 return 0;
         }
 
-        //sprawdzenie, czy wszystkie ruchy zostały wygenerowane
+        /// <summary>
+        /// Metoda sprawdzająca czy wszystkie ruchy zostały już wygenerowane.
+        /// </summary>
+        /// <param name="table"></param>Tablica zawierająca numery wszystkich wykorzystanych pól.
+        /// <returns></returns>
         private int check_if_full(int[] table)
         {
             if (table[13] != 0)
@@ -141,7 +173,14 @@ namespace Sekwencja
                 return 0; //nie wszystkie ruchy wygenerowane
         }
 
-        //sprawdzenie, czy generator "utknął" i nie może wygenerować kolejnego ruchu
+        /// <summary>
+        /// Metoda sprawdzająca czy pseudolosowy generator sekwencji "utknął" i nie może wygenerować kolejnego ruchu.
+        /// Generator nie jest bezbłędny i potrafi doprowadzić do sytuacji, w której nie może wygenerować kolejnego ruchu
+        /// ze względu na ograniczenia krawędzi planszy lub brak możliwości przejścia przez poprzednio wykorzystane pola.
+        /// </summary>
+        /// <param name="count_iterations"></param>Zmienna zawierająca liczbę iteracji pętli generatora.
+        /// Jeśli przekroczy ona wartość 10000 iteracji to uznaję, że generator "utknął" i trzeba ponownie wygenerować sekwencję.
+        /// <returns></returns>
         private bool check_if_stuck(int count_iterations)
         {
             if(count_iterations>10000)
@@ -150,7 +189,9 @@ namespace Sekwencja
                 return false;
         }
 
-        //ponowne wygenerowanie sekwencji w przypadku 'utknięcia' generatora
+        /// <summary>
+        /// Ponowne uruchomienie metody generate_seq() w przypadku 'utknięcia' generatora
+        /// </summary>
         private void generate_again()
         {
             for(int i=0;i<13;i++)

@@ -1,39 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Threading;
 
 namespace Sekwencja
 {
+    /// <summary>
+    /// Główna klasa projektu. Odpowiedzialna za utworzenie okna z grą, obsługę całej gry i odczytywania ruchów gracza z klawiatury.
+    /// </summary>
     public partial class Form1 : Form
     {
         game_info game = new game_info();
         user_input input = new user_input();
+        /// <summary>
+        /// Konstruktor klasy Form1. Przypisywane są w nim wszystkie labele (bloki planszy) i uruchamiana metoda startująca grę.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
             game.labels = new Label[36] {label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12,
                 label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24,
                 label25, label26, label27, label28, label29, label30, label31, label32, label33, label34, label35, label36};
-            start_game(game);
-        }
-        
-        //rozpoczęcie gry
-        private void start_game(game_info game)
-        {
-            game.generate_seq();
-            show_seq(game);
+            start_game();
         }
 
-        //pokazanie sekwencji na ekranie
-        private void show_seq(game_info game)
+        /// <summary>
+        /// Uruchomienie metody generowania sekwencji i pokazanie jej na ekranie (rozpoczęcie gry).
+        /// </summary>
+        private void start_game()
+        {
+            game.generate_seq();
+            show_seq();
+        }
+
+        /// <summary>
+        /// Pokazanie sekwencji na ekranie
+        /// </summary>
+        private void show_seq()
         {
             input.enabled = false;
             int current_pos;
@@ -75,15 +77,10 @@ namespace Sekwencja
             timer2.Start();
         }
 
-        //timer odmierzający kilka sekund i wymazujący sekwencję z ekranu
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            clear_screen(game);
-            timer2.Stop();
-        }
-
-        //funkcja wymazująca sekwencję z planszy
-        private void clear_screen(game_info game)
+        /// <summary>
+        /// Funkcja wymazująca sekwencję z planszy
+        /// </summary>
+        private void clear_screen()
         {
             for (int i = 0; i < 36; i++)
             {
@@ -94,8 +91,10 @@ namespace Sekwencja
             input.enabled = true;
         }
 
-        //funkcja sprawdzająca ruchy gracza
-        private void check_input(game_info game)
+        /// <summary>
+        /// Funkcja sprawdzająca poprawność ruchów gracza i ukończenie poziomu.
+        /// </summary>
+        private void check_input()
         {
             bool flag;
             flag = true;
@@ -116,7 +115,7 @@ namespace Sekwencja
                     //zaktualizowanie wyświetlanej na ekranie punktacji
                     game.score += game.number_of_moves + 25;
                     points_label.Text = "PUNKTY: " + game.score.ToString();
-                    //wyświetlenie czasu przejścia poziomu na ekranie
+                    //wyświetlenie czasu przejścia zakończonego poziomu na ekranie
                     game.level_time.Stop();
                     TimeSpan ts = new TimeSpan();
                     ts = game.level_time.Elapsed;
@@ -143,7 +142,7 @@ namespace Sekwencja
                     }
                     else if(game.level == 3)
                     {
-                        MessageBox.Show("Gratulacje, zaliczono wszystkie poziomy");
+                        MessageBox.Show("Gratulacje, ukończono wszystkie poziomy.");
                     }
                 }
                 //jeśli nie ukończono jeszcze poziomu
@@ -173,11 +172,23 @@ namespace Sekwencja
         }
 
         //odczyt klawiszy strzałek
+        /// <summary>
+        /// "Odczyt" klawiszy strzałek - wymagany do działania ProcessCmdKey
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
         //nadpisanie ProcessCmdKey aby możliwe było odczytywanie klawiszy strzałek
+        /// <summary>
+        /// Nadpisanie ProcessCmdKey aby możliwe było bezpośrednie odczytywanie klawiszy strzałek.
+        /// Przekazuje ona do zapisu ruchy gracza i dzięki niej wyświetlane są w czasie rzeczywistym ruchy gracza na planszy.
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             bool invalid = false;
@@ -243,7 +254,7 @@ namespace Sekwencja
                     if (input.count_input == game.number_of_moves)
                     {
                         input.enabled = false;
-                        check_input(game);
+                        check_input();
                     }
                 }
             }
@@ -251,7 +262,9 @@ namespace Sekwencja
                 return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        //restart gry po kliknięciu na "restart"
+        /// <summary>
+        /// Metoda służąca do restartu gry. (Reset informacji o grze, zatrzymanie timerów itp.)
+        /// </summary>
         private void restart_game()
         {
             //reset informacji o grze (czas poziomu, poziom, liczba ruchów itp.)
@@ -263,23 +276,25 @@ namespace Sekwencja
             //zresetowanie wszystkich ruchów gracza
             input.reset_input();
             //wyczyszczenie ekranu
-            clear_screen(game);
+            clear_screen();
             //przywrócenie domyślnych wyświetlanych wartości (czas, poziom, punkty)
             level_time_label.Text = "CZAS: X";
             level_label.Text = "POZIOM: 1";
             points_label.Text = "PUNKTY: 0";
             //ponowne rozpoczęcie gry
-            start_game(game);
+            start_game();
 
         }
 
-        //wyjście z gry po kliknięciu na "koniec"
+        /// <summary>
+        /// Zakończenie działania aplikacji.
+        /// </summary>
         private void end_game()
         {
             Application.Exit();
         }
 
-        //kliknięcie na napis menu
+        //metoda uruchamiana po kliknięciu na napis menu
         private void menu_label_Click(object sender, EventArgs e)
         {
             koniec_label.Visible = true;
@@ -288,7 +303,7 @@ namespace Sekwencja
             restart_label.Enabled = true;
         }
 
-        //kliknięcie na napis restart
+        //metoda uruchamiana po kliknięciu na napis restart
         private void restart_label_Click(object sender, EventArgs e)
         {
             //uruchomienie procedury restartu gry
@@ -299,7 +314,7 @@ namespace Sekwencja
             restart_label.Enabled = false;
         }
 
-        //kliknięcie na napis koniec
+        //metoda uruchamiana po kliknięciu na napis koniec
         private void koniec_label_Click(object sender, EventArgs e)
         {
             //uruchomienie procedury zakończenia gry
@@ -313,19 +328,24 @@ namespace Sekwencja
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            show_seq(game);
+            show_seq();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            clear_screen();
+            timer2.Stop();
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
             timer3.Stop();
-            clear_screen(game);
+            clear_screen();
         }
-
         private void timer4_Tick(object sender, EventArgs e)
         {
             timer4.Stop();
-            start_game(game);
+            start_game();
         }
     }
 }
