@@ -50,6 +50,7 @@ namespace Sekwencja
             int random = new int();
             int count_iterations = 0;
 
+            //wykonuj dopóki tablica z ruchami nie jest pełna i generator się nie zablokował
             while (check_if_full(table)==0 && check_if_stuck(count_iterations) == false)
             {
                 random = (Guid.NewGuid().GetHashCode())%4 + 1; //1 - lewo, 2 - prawo, 3 - góra, 4 - dół
@@ -109,12 +110,14 @@ namespace Sekwencja
                 }
 
             }
+            //sprawdzenie, czy generator "utknął" i nie może wygenerować kolejnego ruchu
             if(check_if_stuck(count_iterations) == true)
             {
                 generate_again();
             }
         }
 
+        //sprawdzenie, czy kolejny ruch nie przechodzi przez użyte już pola
         private int check_previous_seq(int[] table, int next_pos)
         {
             bool invalid = false;
@@ -129,6 +132,7 @@ namespace Sekwencja
                 return 0;
         }
 
+        //sprawdzenie, czy wszystkie ruchy zostały wygenerowane
         private int check_if_full(int[] table)
         {
             if (table[13] != 0)
@@ -137,6 +141,7 @@ namespace Sekwencja
                 return 0; //nie wszystkie ruchy wygenerowane
         }
 
+        //sprawdzenie, czy generator "utknął" i nie może wygenerować kolejnego ruchu
         private bool check_if_stuck(int count_iterations)
         {
             if(count_iterations>10000)
@@ -145,6 +150,7 @@ namespace Sekwencja
                 return false;
         }
 
+        //ponowne wygenerowanie sekwencji w przypadku 'utknięcia' generatora
         private void generate_again()
         {
             for(int i=0;i<13;i++)
