@@ -99,5 +99,23 @@ namespace Sekwencja.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.IO.UnmanagedMemoryStream podobny do zasobu System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream zapsplat_fail {
+            get {
+                return ResourceManager.GetStream("zapsplat_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.IO.UnmanagedMemoryStream podobny do zasobu System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream zapsplat_success {
+            get {
+                return ResourceManager.GetStream("zapsplat_success", resourceCulture);
+            }
+        }
     }
 }

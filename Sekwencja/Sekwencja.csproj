@@ -93,5 +93,11 @@
   <ItemGroup>
     <None Include="koniec.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="zapsplat_fail.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zapsplat_success.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

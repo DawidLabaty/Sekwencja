@@ -78,6 +78,7 @@ namespace Sekwencja
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.notification_label = new System.Windows.Forms.Label();
+            this.license_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -716,12 +717,24 @@ namespace Sekwencja
             this.notification_label.TabIndex = 7;
             this.notification_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // license_label
+            // 
+            this.license_label.AutoSize = true;
+            this.license_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.license_label.Location = new System.Drawing.Point(942, 704);
+            this.license_label.Name = "license_label";
+            this.license_label.Size = new System.Drawing.Size(49, 15);
+            this.license_label.TabIndex = 8;
+            this.license_label.Text = "Licencje";
+            this.license_label.Click += new System.EventHandler(this.license_label_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.license_label);
             this.Controls.Add(this.notification_label);
             this.Controls.Add(this.koniec_label);
             this.Controls.Add(this.restart_label);
@@ -791,6 +804,7 @@ namespace Sekwencja
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Label notification_label;
+        private System.Windows.Forms.Label license_label;
     }
 }
 

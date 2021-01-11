@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Sekwencja
 {
@@ -92,7 +93,7 @@ namespace Sekwencja
         }
 
         /// <summary>
-        /// Funkcja sprawdzająca poprawność ruchów gracza i ukończenie poziomu.
+        /// Funkcja sprawdzająca poprawność ruchów gracza i ukończenie poziomu. Zawiera także odwtarzanie dźwięków.
         /// </summary>
         private void check_input()
         {
@@ -136,6 +137,8 @@ namespace Sekwencja
                         input.count_input = 0;
                         input.current_pos = 35;
                         level_label.Text = "POZIOM: " + game.level;
+                        //odtworzenie dźwięku
+                        new SoundPlayer(Properties.Resources.zapsplat_success).Play();
                         //timer3 i wewnątrz niego clear_screen()
                         timer3.Interval = 500;
                         timer3.Start();
@@ -148,6 +151,8 @@ namespace Sekwencja
                         //zaktualizowanie tekstu w obszarze powiadomień
                         notification_label.ForeColor = Color.Green;
                         notification_label.Text = "Gratulacje! Ukończono wszystkie poziomy.";
+                        //odtworzenie dźwięku
+                        new SoundPlayer(Properties.Resources.zapsplat_success).Play();
                     }
                 }
                 //jeśli nie ukończono jeszcze poziomu
@@ -174,6 +179,8 @@ namespace Sekwencja
                 //zaktualizowanie tekstu w obszarze powiadomień
                 notification_label.ForeColor = Color.Crimson;
                 notification_label.Text = "Nieprawidłowa sekwencja! Możesz zrestartować lub zakończyć grę używając menu poniżej.";
+                //odtworzenie dźwięku
+                new SoundPlayer(Properties.Resources.zapsplat_fail).Play();
             }
 
         }
@@ -388,6 +395,13 @@ namespace Sekwencja
             //usunięcie powiadomienia o ukończeniu poziomu
             notification_label.Text = "";
             start_game();
+        }
+
+        private void license_label_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Licencje:\n"+
+                "Efekty dźwiękowe pobrane ze strony www.zapsplat.com\n"
+                + "Napisy menu stworzone za pomocą darmowego generatora www.cooltext.com");
         }
     }
 }
