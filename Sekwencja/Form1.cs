@@ -115,11 +115,14 @@ namespace Sekwencja
                     //zaktualizowanie wyświetlanej na ekranie punktacji
                     game.score += game.number_of_moves + 25;
                     points_label.Text = "PUNKTY: " + game.score.ToString();
+                    //powiadomienie o ukończeniu poziomu
+                    notification_label.ForeColor = Color.Green;
+                    notification_label.Text = "Ukończono poziom " + game.level.ToString()+". Dodano 25 punktów.";
                     //wyświetlenie czasu przejścia zakończonego poziomu na ekranie
                     game.level_time.Stop();
                     TimeSpan ts = new TimeSpan();
                     ts = game.level_time.Elapsed;
-                    string elapsedTime = String.Format("{0:00}.{1:00}", ts.Seconds, ts.Milliseconds / 10);
+                    string elapsedTime = String.Format("{0}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
                     level_time_label.Text = "CZAS: " + elapsedTime;
                     //reset stopera odmierzającego czas poziomu
                     game.level_time.Reset();
@@ -142,7 +145,9 @@ namespace Sekwencja
                     }
                     else if(game.level == 3)
                     {
-                        MessageBox.Show("Gratulacje, ukończono wszystkie poziomy.");
+                        //zaktualizowanie tekstu w obszarze powiadomień
+                        notification_label.ForeColor = Color.Green;
+                        notification_label.Text = "Gratulacje! Ukończono wszystkie poziomy.";
                     }
                 }
                 //jeśli nie ukończono jeszcze poziomu
@@ -166,7 +171,9 @@ namespace Sekwencja
             //jeśli sekwencja jest nieprawidłowa
             else
             {
-                MessageBox.Show("Nieprawidłowa sekwencja, możesz zrestartować lub zakończyć grę używając menu");
+                //zaktualizowanie tekstu w obszarze powiadomień
+                notification_label.ForeColor = Color.Crimson;
+                notification_label.Text = "Nieprawidłowa sekwencja! Możesz zrestartować lub zakończyć grę używając menu poniżej.";
             }
 
         }
@@ -281,6 +288,7 @@ namespace Sekwencja
             level_time_label.Text = "CZAS: X";
             level_label.Text = "POZIOM: 1";
             points_label.Text = "PUNKTY: 0";
+            notification_label.Text = "";
             //ponowne rozpoczęcie gry
             start_game();
 
@@ -294,7 +302,11 @@ namespace Sekwencja
             Application.Exit();
         }
 
-        //metoda uruchamiana po kliknięciu na napis menu
+        /// <summary>
+        /// Metoda uruchamiana po kliknięciu na napis menu. Powoduje pokazanie opcji w menu (koniec i restart).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menu_label_Click(object sender, EventArgs e)
         {
             koniec_label.Visible = true;
@@ -303,7 +315,11 @@ namespace Sekwencja
             restart_label.Enabled = true;
         }
 
-        //metoda uruchamiana po kliknięciu na napis restart
+        /// <summary>
+        /// Metoda uruchamiana po kliknięciu na napis restart. Uruchamia ona metodę restart_game() i ukrywa opcję menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void restart_label_Click(object sender, EventArgs e)
         {
             //uruchomienie procedury restartu gry
@@ -314,7 +330,11 @@ namespace Sekwencja
             restart_label.Enabled = false;
         }
 
-        //metoda uruchamiana po kliknięciu na napis koniec
+        /// <summary>
+        /// Metoda uruchamiana po kliknięciu na napis koniec. Uruchamia metodę end_game().
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void koniec_label_Click(object sender, EventArgs e)
         {
             //uruchomienie procedury zakończenia gry
@@ -325,26 +345,48 @@ namespace Sekwencja
             restart_label.Enabled = false;
         }
 
+        /// <summary>
+        /// Timer do pokazania sekwencji. Uruchamia metodę show_seq().
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
             show_seq();
         }
 
+        /// <summary>
+        /// Timer do wymazania sekwencji z ekranu. Uruchamia metodę clear_screen().
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer2_Tick(object sender, EventArgs e)
         {
             clear_screen();
             timer2.Stop();
         }
 
+        /// <summary>
+        /// Timer do wymazania sekwencji z ekranu przed przejściem do kolejnego poziomu. Uruchamia metodę clear_screen().
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer3_Tick(object sender, EventArgs e)
         {
             timer3.Stop();
             clear_screen();
         }
+        /// <summary>
+        /// Timer do uruchomienia metody start_game() startującej kolejny poziom. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer4_Tick(object sender, EventArgs e)
         {
             timer4.Stop();
+            //usunięcie powiadomienia o ukończeniu poziomu
+            notification_label.Text = "";
             start_game();
         }
     }

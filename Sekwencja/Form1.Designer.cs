@@ -77,6 +77,7 @@ namespace Sekwencja
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.notification_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -706,12 +707,22 @@ namespace Sekwencja
             // 
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
+            // notification_label
+            // 
+            this.notification_label.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.notification_label.Location = new System.Drawing.Point(749, 189);
+            this.notification_label.Name = "notification_label";
+            this.notification_label.Size = new System.Drawing.Size(247, 237);
+            this.notification_label.TabIndex = 7;
+            this.notification_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.notification_label);
             this.Controls.Add(this.koniec_label);
             this.Controls.Add(this.restart_label);
             this.Controls.Add(this.menu_label);
@@ -779,6 +790,7 @@ namespace Sekwencja
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Label notification_label;
     }
 }
 
