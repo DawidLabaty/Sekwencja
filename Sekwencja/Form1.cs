@@ -10,7 +10,13 @@ namespace Sekwencja
     /// </summary>
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Zmienna klasy game_info, przechowuje informacje o aktualnym stanie gry itp.
+        /// </summary>
         game_info game = new game_info();
+        /// <summary>
+        /// Zmienna klasy user_input, przechowuje informacje o danych wprowadzanych przez gracza.
+        /// </summary>
         user_input input = new user_input();
         /// <summary>
         /// Konstruktor klasy Form1. Przypisywane są w nim wszystkie labele (bloki planszy) i uruchamiana metoda startująca grę.
@@ -93,7 +99,7 @@ namespace Sekwencja
         }
 
         /// <summary>
-        /// Funkcja sprawdzająca poprawność ruchów gracza i ukończenie poziomu. Zawiera także odwtarzanie dźwięków.
+        /// Funkcja sprawdzająca poprawność ruchów gracza i ukończenie poziomu. Zawiera także odtwarzanie dźwięków.
         /// </summary>
         private void check_input()
         {
@@ -329,7 +335,6 @@ namespace Sekwencja
         /// <param name="e"></param>
         private void restart_label_Click(object sender, EventArgs e)
         {
-            //uruchomienie procedury restartu gry
             restart_game();
             koniec_label.Visible = false;
             koniec_label.Enabled = false;
@@ -344,7 +349,6 @@ namespace Sekwencja
         /// <param name="e"></param>
         private void koniec_label_Click(object sender, EventArgs e)
         {
-            //uruchomienie procedury zakończenia gry
             end_game();
             koniec_label.Visible = false;
             koniec_label.Enabled = false;
@@ -385,7 +389,7 @@ namespace Sekwencja
             clear_screen();
         }
         /// <summary>
-        /// Timer do uruchomienia metody start_game() startującej kolejny poziom. 
+        /// Timer do uruchomienia metody start_game() startującej kolejny poziom i usunięcia tekstu z notification_label. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -396,7 +400,11 @@ namespace Sekwencja
             notification_label.Text = "";
             start_game();
         }
-
+        /// <summary>
+        /// Metoda pokazująca okienko z informacjami o licencjach zasobów po kliknięciu na 'Licencje'.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void license_label_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Licencje:\n"+

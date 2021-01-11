@@ -141,11 +141,13 @@ namespace Sekwencja
         }
 
         /// <summary>
-        /// Metoda sprawdzająca czy kolejny wygenerowany ruch nie przechodzi przez użyte już pola.
+        /// Metoda sprawdzająca czy kolejny wygenerowany ruch nie przechodzi przez użyte już pola (nieprawidłowy ruch).
         /// </summary>
         /// <param name="table"></param> Tablica zawierająca numery wszystkich wykorzystanych pól.
         /// <param name="next_pos"></param> Zmienna przechowująca numer kolejnego pola.
-        /// <returns></returns>
+        /// <returns>
+        /// Zwraca wartość 1 jeśli wygenerowany ruch nie jest prawidłowy. W przeciwnym przypadku zwraca wartość 0.
+        /// </returns>
         private int check_previous_seq(int[] table, int next_pos)
         {
             bool invalid = false;
@@ -164,7 +166,9 @@ namespace Sekwencja
         /// Metoda sprawdzająca czy wszystkie ruchy zostały już wygenerowane.
         /// </summary>
         /// <param name="table"></param>Tablica zawierająca numery wszystkich wykorzystanych pól.
-        /// <returns></returns>
+        /// <returns>
+        /// Zwraca wartość 1 jeśli wszystkie ruchy zostały wygenerowane. Jeśli tak nie jest to zwraca 0.
+        /// </returns>
         private int check_if_full(int[] table)
         {
             if (table[13] != 0)
@@ -180,7 +184,9 @@ namespace Sekwencja
         /// </summary>
         /// <param name="count_iterations"></param>Zmienna zawierająca liczbę iteracji pętli generatora.
         /// Jeśli przekroczy ona wartość 10000 iteracji to uznaję, że generator "utknął" i trzeba ponownie wygenerować sekwencję.
-        /// <returns></returns>
+        /// <returns>
+        /// Zwraca wartość prawda, jeśli liczba iteracji jest większa niż 10000. W przeciwnym wypadku zwraca wartość fałsz.
+        /// </returns>
         private bool check_if_stuck(int count_iterations)
         {
             if(count_iterations>10000)
@@ -190,7 +196,7 @@ namespace Sekwencja
         }
 
         /// <summary>
-        /// Ponowne uruchomienie metody generate_seq() w przypadku 'utknięcia' generatora
+        /// Ponowne uruchomienie metody generate_seq() w przypadku 'utknięcia' generatora.
         /// </summary>
         private void generate_again()
         {

@@ -755,8 +755,13 @@ namespace Sekwencja
         }
 
         #endregion
-
+        /// <summary>
+        /// Panel, w którym znajduje się 36 labeli (plansza gry).
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// label1-36 - składa się z nich wyświetlana plansza gry.
+        /// </summary>
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
@@ -793,17 +798,53 @@ namespace Sekwencja
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        /// <summary>
+        /// Timer do wymazania sekwencji z ekranu.
+        /// </summary>
         private System.Windows.Forms.Timer timer2;
+        /// <summary>
+        /// Label do wyświetlania punktacji.
+        /// </summary>
         private System.Windows.Forms.Label points_label;
+        /// <summary>
+        /// Label do wyświetlania poziomu.
+        /// </summary>
         private System.Windows.Forms.Label level_label;
+        /// <summary>
+        /// Label do wyświetlania czasu przejścia poprzedniego poziomu.
+        /// </summary>
         private System.Windows.Forms.Label level_time_label;
+        /// <summary>
+        /// Label do wyświetlania napisu menu.
+        /// </summary>
         private System.Windows.Forms.Label menu_label;
+        /// <summary>
+        /// Label do wyświetlania napisu restart.
+        /// </summary>
         private System.Windows.Forms.Label restart_label;
+        /// <summary>
+        /// Label do wyświetlania napisu koniec.
+        /// </summary>
         private System.Windows.Forms.Label koniec_label;
+        /// <summary>
+        /// Timer do pokazania sekwencji.
+        /// </summary>
         private System.Windows.Forms.Timer timer1;
+        /// <summary>
+        /// Timer do wymazania sekwencji z ekranu przed przejściem do kolejnego poziomu.
+        /// </summary>
         private System.Windows.Forms.Timer timer3;
+        /// <summary>
+        /// Timer do uruchomienia metody start_game() startującej kolejny poziom. 
+        /// </summary>
         private System.Windows.Forms.Timer timer4;
+        /// <summary>
+        /// Label do wyświetlania powiadomień dla użytkownika.
+        /// </summary>
         private System.Windows.Forms.Label notification_label;
+        /// <summary>
+        /// Label, po kliknięciu którego wyświetla się okno z licencjami zasobów.
+        /// </summary>
         private System.Windows.Forms.Label license_label;
     }
 }

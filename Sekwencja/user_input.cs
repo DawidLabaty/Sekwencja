@@ -23,7 +23,6 @@ namespace Sekwencja
         /// </summary>
         public bool enabled = false;
 
-        //reset wprowadzonych przez użytkownika ruchów itp.
         /// <summary>
         /// Reset zapisanych informacji o ruchach gracza.
         /// </summary>
